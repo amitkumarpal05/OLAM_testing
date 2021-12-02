@@ -4,7 +4,7 @@
  
   tasks:
     - name: just display
-      shell: uptime && uptime
+      shell: uptime && hostname
       register: hostname
     - debug:
         var: hostname
