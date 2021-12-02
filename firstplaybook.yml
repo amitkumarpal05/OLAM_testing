@@ -8,3 +8,8 @@
       register: hostname
     - debug:
         var: hostname
+    - name: just display
+      shell: cat /etc/redhat-release
+      register: hostname
+    - debug:
+        var: hostname
