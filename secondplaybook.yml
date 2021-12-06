@@ -15,4 +15,5 @@
     - 
       debug: 
         var: his.stdout_lines
+  warn: false
 
