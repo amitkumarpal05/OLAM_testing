@@ -2,7 +2,7 @@
 - 
   become: true
   gather_facts: false
-  hosts: "all interpreter_python=auto_silent"
+  hosts: all 
   name: "To run command"
   tasks: 
     - 
@@ -15,4 +15,4 @@
     - 
       debug: 
         var: his.stdout_lines
-
+ansible_python_interpreter: /usr/bin/python
