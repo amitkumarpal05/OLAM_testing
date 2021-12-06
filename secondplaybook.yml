@@ -8,6 +8,7 @@
     - 
       name: "run yum log command"
       shell: "yum history info > /root/last-yum-transaction.log"
+      warn: false
     - 
       name: "run command"
       register: his
