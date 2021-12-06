@@ -1,8 +1,9 @@
 --- 
 - 
   become_method: sudo
-  become_user: root
+  become_user: opc
   gather_facts: false
+  warn: false
   hosts: all
   tasks: 
     - 
