@@ -7,11 +7,11 @@
   tasks: 
     - 
       name: "run yum log command"
-      shell: "yum history info > /root/last-yum-transaction.log"
+      shell: "yum history info > /var/log/last-yum-transaction.log"
     - 
       name: "run command"
       register: his
-      shell: "cat /root/last-yum-transaction.log | grep -i \"Begin time\" | awk '{print $4\"-\"$5\"-\"$6\"-\"$8 }'"
+      shell: "cat /var/log/last-yum-transaction.log | grep -i \"Begin time\" | awk '{print $4\"-\"$5\"-\"$6\"-\"$8 }'"
     - 
       debug: 
         var: his.stdout_lines
