@@ -1,21 +1,17 @@
----
-- name: To run command
-  hosts: all
+--- 
+- 
+  become_metho: sudo
   become_user: root
-  become_method: sudo
-  gather_facts: no
-​
-​
-  tasks:
-​
-​
-    - name: run yum log command
-      shell: yum history info > /root/last-yum-transaction.log
-​
-    - name: run command
-      shell: cat /root/last-yum-transaction.log | grep -i "Begin time" | awk '{print $4"-"$5"-"$6"-"$8 }'
+  gather_facts: false
+  hosts: all
+  tasks: 
+    - 
+      name: "run yum log command"
+      shell: "yum history info > /root/last-yum-transaction.log"
+    - 
+      name: "run command"
       register: his
-​
-​
-    - debug:
+      shell: "cat /root/last-yum-transaction.log | grep -i \"Begin time\" | awk '{print $4\"-\"$5\"-\"$6\"-\"$8 }'"
+    - 
+      debug: 
         var: his.stdout_lines
