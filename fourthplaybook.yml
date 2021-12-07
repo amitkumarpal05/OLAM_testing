@@ -20,12 +20,5 @@
     - 
       debug: 
         var: his.stdout_lines
-       
-    -
-      name: "Run yum update on the all server" 
-      register: his
-      shell: "yum update " 
       
-    -
-      debug: 
-        var: his.stdout_lines
+  
