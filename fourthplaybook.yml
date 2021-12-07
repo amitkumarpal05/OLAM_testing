@@ -6,14 +6,12 @@
   name: "To run command"
   tasks: 
     - 
-      name: "run /etc/fstab command"
-      register: his1
-      shell: "cat /etc/fstab"
+      name: "run yum log command"
+      shell: "yum history info > /root/last-yum-transaction.log"
     - 
-      name: "run command df -h "
+      name: "run command"
       register: his
       shell: "df -h"
     - 
       debug: 
         var: his.stdout_lines
-        var1: his1.stdout_lines
