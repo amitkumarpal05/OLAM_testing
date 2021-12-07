@@ -1,9 +1,11 @@
----
-- hosts: all
+--- 
+- 
   become: true
   gather_facts: false
-- name: To list installed version of wget and rbuy on all servers
-  yum:
-  list: wget,ruby
+  hosts: all
+- 
+  list: "wget,ruby"
+  name: "To list installed version of wget and rbuy on all servers"
   register: yum_output
-- debug var=yum_output
+  yum: ~
+- "debug var=yum_output"
