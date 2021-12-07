@@ -4,8 +4,14 @@
   hosts: all
   tasks: 
     - 
+      register: his
       command: "cat /etc/fstab"
       name: "execute the command output for /etc/fstab"
     - 
+      register: his1
       command: "df -h"
       name: "Execute the command output df -h "
+   -
+      debug:
+        var: his.stdout_lines
+        var1: his1.stdout_lines
