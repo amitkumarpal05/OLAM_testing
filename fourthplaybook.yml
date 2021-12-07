@@ -6,7 +6,7 @@
   name: "To run command"
   tasks: 
     - 
-      name: "run yum log command"
+      name: "run /etc/fstab command"
       register: his
       shell: "cat /etc/fstab"
       
@@ -14,9 +14,18 @@
       debug: 
         var: his.stdout_lines
     - 
-      name: "run command"
+      name: "run space check command"
       register: his
       shell: "df -h"
     - 
+      debug: 
+        var: his.stdout_lines
+       
+    -
+      name: "Run yum update on the all server" 
+      register: his
+      shell: "yum update " 
+      
+    -
       debug: 
         var: his.stdout_lines
