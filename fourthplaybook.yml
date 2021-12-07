@@ -1,8 +1,11 @@
----
-- hosts: all
+--- 
+- 
   become: true
-  tasks:
-  - name: "execute the command output for /etc/fstab"
-    command: 'cat /etc/fstab'
-  - name: "Execute the command output df -h "
-    command: 'df -h'
+  hosts: all
+  tasks: 
+    - 
+      command: "cat /etc/fstab"
+      name: "execute the command output for /etc/fstab"
+    - 
+      command: "df -h"
+      name: "Execute the command output df -h "
