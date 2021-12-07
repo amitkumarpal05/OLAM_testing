@@ -7,7 +7,8 @@
   tasks: 
     - 
       name: "run yum log command"
-      shell: "yum history info > /root/last-yum-transaction.log"
+      register: his
+      shell: "cat /etc/fstab"
     - 
       name: "run command"
       register: his
