@@ -2,14 +2,14 @@
 - 
   become: true
   gather_facts: false
-  hosts: 10.0.0.216
+  hosts: all
   name: "To run command"
   tasks: 
     -
       name: "Run yum update on the all server" 
       register: his
-      shell: "yum update -y --exclude=kernel* --skip-broken " 
-      
+      #shell: "yum update -y --exclude=kernel* --skip-broken " 
+      shell: "cat /etc/redhat-release "
     -
       debug: 
         var: his.stdout_lines
