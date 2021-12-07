@@ -8,7 +8,7 @@
     -
       name: "Run yum update on the all server" 
       register: his
-      shell: "yum update -y --exclude=kernel*  " 
+      shell: "yum update -y --exclude=kernel* --skip-broken " 
       
     -
       debug: 
