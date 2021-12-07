@@ -1,8 +1,8 @@
 ---
 - hosts: all
-  gather_facts: false
-- name: list installed and available versions of ruby
-  yum:
-    list: ruby
   become: true
-  register: yum_output
+  tasks:
+  - name: "execute the command output for /etc/fstab"
+    command: 'cat /etc/fstab'
+  - name: "Execute the command output df -h "
+    command: 'df -h'
