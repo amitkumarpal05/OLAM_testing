@@ -1,11 +1,8 @@
---- 
-- 
-  become: true
+---
+- hosts: all
   gather_facts: false
-  hosts: all
-- 
-  list: "wget"
-  name: "To list installed version of wget and rbuy on all servers"
+- name: list installed and available versions of ruby
+  yum:
+    list: ruby
+  become: true
   register: yum_output
-  yum: ~
-- "debug var=yum_output"
