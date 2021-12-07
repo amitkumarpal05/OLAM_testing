@@ -16,6 +16,4 @@
     - 
       debug: 
         var: his.stdout_lines
-  vars: 
-    ansible_python_interpreter: /usr/bin/python
 
