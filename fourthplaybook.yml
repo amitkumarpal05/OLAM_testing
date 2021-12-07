@@ -15,5 +15,5 @@
       shell: "df -h"
     - 
       debug: 
-        var: his.stdout_linesstdout_lines
-        var1: his1.stdout_linesstdout_lines
+        var: his.stdout_lines
+        var1: his1.stdout_lines
