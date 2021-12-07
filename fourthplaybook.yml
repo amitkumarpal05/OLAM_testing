@@ -4,7 +4,7 @@
   gather_facts: false
   hosts: all
 - 
-  list: "wget ruby"
+  list: "wget"
   name: "To list installed version of wget and rbuy on all servers"
   register: yum_output
   yum: ~
