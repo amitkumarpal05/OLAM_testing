@@ -9,6 +9,10 @@
       name: "run yum log command"
       register: his
       shell: "cat /etc/fstab"
+      
+    - 
+      debug: 
+        var: his.stdout_lines
     - 
       name: "run command"
       register: his
@@ -16,4 +20,3 @@
     - 
       debug: 
         var: his.stdout_lines
-        verbosity: 2
