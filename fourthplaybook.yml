@@ -1,17 +1,19 @@
 --- 
 - 
   become: true
+  gather_facts: false
   hosts: all
+  name: "To run command"
   tasks: 
     - 
-      register: his
-      command: "cat /etc/fstab"
-      name: "execute the command output for /etc/fstab"
-    - 
+      name: "run /etc/fstab command"
       register: his1
-      command: "df -h"
-      name: "Execute the command output df -h "
-   -
-      debug:
-        var: his.stdout_lines
-        var1: his1.stdout_lines
+      shell: "cat /etc/fstab"
+    - 
+      name: "run command df -h "
+      register: his
+      shell: "df -h"
+    - 
+      debug: 
+        var: his.stdout_linesstdout_lines
+        var1: his1.stdout_linesstdout_lines
