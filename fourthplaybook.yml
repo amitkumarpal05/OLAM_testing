@@ -7,7 +7,7 @@
   tasks: 
     - 
       name: "run yum log command"
-      register: his1
+      register: his
       shell: "cat /etc/fstab"
     - 
       name: "run command"
@@ -16,4 +16,4 @@
     - 
       debug: 
         var: his.stdout_lines
-        var1: his1.stdout_lines
+        verbosity: 2
