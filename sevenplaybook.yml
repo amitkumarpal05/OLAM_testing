@@ -17,8 +17,9 @@
      vars:
       msg: |
        All IP: {{ ansible_default_ipv4.address }}
+       Interface Type: {{ ansible_default_ipv4.alias }}
        Gateway: {{ ansible_default_ipv4.gateway }}
-       Eth0 MAC: {{ ansible_interface.macaddress }}
+       Eth0 MAC: {{ ansible_default_ipv4.macaddress }}
      debug:
       msg: "{{ msg.split('\n') }}"
 
