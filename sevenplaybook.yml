@@ -16,7 +16,7 @@
    - name: network info
      vars:
       msg: |
-       All IP: {{ ansible_default_ipv4_address }}
+       All IP: {{ ansible_default_ipv4.address }}
        Gateway: {{ ansible_default_ipv4.gateway }}
        Eth0 MAC: {{ ansible_interface.macaddress }}
      debug:
