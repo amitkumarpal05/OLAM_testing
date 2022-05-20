@@ -3,7 +3,7 @@
  # become_method: sudo
  # become_user: root
   tasks:
-    - package: "name=rysnc state=present"
-    - service: "name=rsync state=stopped"
-    - service: "name=rsync state=started"
+    - package: "name=openssh state=present"
+    - service: "name=openssh state=restarted"
+    #- service: "name=rsync state=started"
     #- service: "name=httpd state=started"
