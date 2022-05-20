@@ -3,7 +3,7 @@
  # become_method: sudo
  # become_user: root
   tasks:
-    - package: "name=openssh state=present"
-    - service: "name=openssh state=restarted"
+    - package: "name=bind state=present"
+    - service: "name=bind state=restarted"
     #- service: "name=rsync state=started"
     #- service: "name=httpd state=started"
