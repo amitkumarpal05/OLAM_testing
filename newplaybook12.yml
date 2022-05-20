@@ -1,0 +1,15 @@
+---
+ - hosts: all
+  gather_facts: no
+  tasks:
+  - name: test_task
+    shell: "if ! systemctl is-active firewalld; then  echo 'inactive' ; fi"
+    register: firewalld_active
+    failed_when: False
+    changed_when: False
+
+  - debug: var=firewalld_active
+
+  - name: check_value_firewalld
+    debug: 
+      msg: "'firewalld is inactive' if firewalld_active.stdout=='inactive' else 'service is active' "
