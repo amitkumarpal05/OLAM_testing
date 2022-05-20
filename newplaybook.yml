@@ -1,7 +1,8 @@
 - hosts: all
-  become: true
-  become_method: sudo
-  become_user: root
+  gather_facts: true
+ # become: true
+ # become_method: sudo
+ # become_user: root
   tasks:
     - package: "name=httpd state=present"
     - service: "name=httpd state=restarted"
